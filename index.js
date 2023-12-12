@@ -5,9 +5,9 @@ var userGenerator_1 = require("./userGenerator");
 var usersArray = (0, userGenerator_1.default)();
 function matching(userA, userArray) {
     var prefs = userA.userPrefs; //Stores the user's prefs in a variable
-    //First we check if the generated users match with Sample User's prefs, otherwise they won't show up in the matching process
+    //First we check if the generated user's age and gender match with Sample User's prefs, otherwise they won't show up in the matching process
     userArray.map(function (user) {
-        if (prefs.age.includes(user.age)) {
+        if (prefs.age.includes(user.age) && prefs.gender.includes(user.gender)) {
             //Checking if the user's languages match with the Sample User's prefs
             user.languages.map(function (l) {
                 return prefs.languages.includes(l) ? user.affinityScore++ : "";
@@ -17,17 +17,13 @@ function matching(userA, userArray) {
             user.hobbies.map(function (h) {
                 return userA.hobbies.includes(h) ? user.affinityScore++ : "";
             });
-            //Checks if user's gender matches with Sample User's prefs
-            if (prefs.gender.includes(user.gender)) {
-                user.affinityScore++;
-            }
             //Checks if user's location matches with Sample User's location (no coordinates here, just a number representing the distance)
             if (prefs.location.includes(user.location)) {
                 user.affinityScore++;
             }
             //If the user's affinity score is greater than 3, it's a top profile, it logs the user's info
-            if (user.affinityScore > 3) {
-                console.log("\n".concat(user.name, " is a top profile for ").concat(userA.name, "\n scored: ").concat(user.affinityScore, " points! \nThe profile's \nlanguages: ").concat(user.languages, ", \nhobbies: ").concat(user.hobbies, ", \nlocation: ").concat(user.location, "\n"));
+            if (user.affinityScore >= 3) {
+                console.log("\n".concat(user.name, " is a top profile for ").concat(userA.name, "\n scored: ").concat(user.affinityScore, " points! \nThe profile's \ngender: ").concat(user.gender, " \nlanguages: ").concat(user.languages, ", \nhobbies: ").concat(user.hobbies, ", \nlocation: ").concat(user.location, "\n"));
                 //If the user's affinity score is less than 3, it only logs the affinity score
             }
             else {
