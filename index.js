@@ -51,7 +51,7 @@ var sampleUser = {
         age: [20, 21, 22, 23, 24, 25, 26, 27],
         gender: ["female"],
         languages: ["javascript", "php"],
-        location: Array.from({ length: 100 - 0 + 1 }, function (_, i) { return i; }),
+        location: Array.from({ length: 100 - 0 + 1 }, function (_, i) { return i; }), //Set max distance in the length property (default: 100)
     },
 };
 matching(sampleUser, usersArray);

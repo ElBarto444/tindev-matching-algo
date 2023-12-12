@@ -87,10 +87,10 @@ const sampleUser: UserWithPrefs = {
   location: 0,
   affinityScore: 0,
   userPrefs: {
-    age: [20, 21, 22, 23, 24, 25, 26, 27],
+    age: [20, 21, 22, 23, 24, 25, 26, 27], //Select age range
     gender: ["female"],
     languages: ["javascript", "php"],
-    location: Array.from({ length: 100 - 0 + 1 }, (_, i) => i),
+    location: Array.from({ length: 100 - 0 + 1 }, (_, i) => i), //Set max distance in the length property (default: 100)
   },
 };
 
