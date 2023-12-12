@@ -24,8 +24,6 @@ export interface UserWithPrefs {
   affinityScore: number;
 }
 
-export interface RandomUser {}
-
 export interface UserPreferences {
   age: number[];
   gender: string[];
