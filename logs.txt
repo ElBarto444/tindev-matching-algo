@@ -1,0 +1,11 @@
+console.log(
+              `${userA.name}'s prefs match with ${user.name}'s languages`
+            )
+
+console.log(
+              `${userA.name}'s prefs match with ${user.name}'s hobbies`
+            )
+
+console.log(`${userA.name}'s prefs match with ${user.name}'s gender`)
+
+console.log(`${userA.name}'s prefs match with ${user.name}'s location`)
